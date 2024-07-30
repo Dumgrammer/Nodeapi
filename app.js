@@ -2,9 +2,16 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const parser = require('body-parser');
+const mongoose = require('mongoose');
 
 const prouductRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
+
+mongoose.connect('mongodb+srv://bastianlacap55:' 
+    + process.env.mongodbpass + 
+    '@nodeapi.sqejkvo.mongodb.net/?retryWrites=true&w=majority&appName=Nodeapi'
+);
+mongoose.Promise = global.Promise;
 
 //Libraries
 app.use(morgan('dev'));
