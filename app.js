@@ -15,6 +15,7 @@ mongoose.Promise = global.Promise;
 
 //Libraries
 app.use(morgan('dev'));
+app.use('/uploads',express.static('uploads'));
 app.use(parser.urlencoded({extended: false}));
 app.use(parser.json())
 
@@ -53,4 +54,5 @@ app.use((error, req, res, next) => {
         }
     })
 });
+
 module.exports = app;
