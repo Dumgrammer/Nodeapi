@@ -14,8 +14,11 @@
   "author": "Karl Bastian",
   "license": "ISC",
   "dependencies": {
+    "argon2": "^0.40.3",
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.1",
     "morgan": "^1.10.0",

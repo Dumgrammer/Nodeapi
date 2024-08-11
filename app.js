@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const prouductRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
+const userRoutes = require('./api/routes/user');
 
 mongoose.connect('mongodb+srv://bastianlacap55:' 
     + process.env.mongodbpass + 
@@ -36,7 +37,7 @@ app.use((req, res, next) => {
 //This would behave like a middleware
 app.use('/products', prouductRoutes);
 app.use('/orders', orderRoutes);
-
+app.use('/user', userRoutes);
 //Error handler for request
 app.use((req, res, next) => {
     const error = new Error('Not Found');

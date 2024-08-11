@@ -1,5 +1,6 @@
 {
     "env": {
-        "mongodbpass": "OS7mCQPvyIzTaLAc"
+        "mongodbpass": "OS7mCQPvyIzTaLAc",
+        "jwt_key": "cc8199afef57bce889c39c69c260b33177f1624176dbff53fbd52dbfcc4abd82"
     }
 }
