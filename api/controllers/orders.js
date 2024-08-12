@@ -32,6 +32,30 @@ exports.ordersGetAll = (req, res, next) => {
     });
 }
 
+exports.getAll = async(req, res, next) => {
+    try {
+       const allOrders = await Order.find()
+       .select('-__v')
+       .populate('product', '-__v')
+       .exec();
+
+       if (allOrders !== null) {
+        return res.status(200).json({
+            order: allOrders
+        })
+       } else {
+        return res.status(404).json({
+            message: "No Order found"
+        });
+       }
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            err: error
+        })
+    }
+}
+
 exports.createOrder = (req, res, next) => {
 
     Product.findById(req.body.productId)

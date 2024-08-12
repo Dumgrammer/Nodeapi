@@ -4,7 +4,7 @@ const AuthGuard = require('../middleware/auth-guard');
 
 const Ordercontroller = require('../controllers/orders');
 
-router.get('/', AuthGuard, Ordercontroller.ordersGetAll);
+router.get('/', AuthGuard, Ordercontroller.getAll);
 
 router.post('/', AuthGuard, Ordercontroller.createOrder);
  
